@@ -1,0 +1,44 @@
+{
+  "name": "webvtt-transcript",
+  "version": "0.0.1",
+  "description": "View WebVTT as a transcript",
+  "author": "Ed Summers <ehs@pobox.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edsu/webvtt-player.git"
+  },
+  "scripts": {
+    "start": "webpack-dashboard -- webpack-dev-server --config webpack.dev.js --mode development",
+    "build": "webpack --config webpack.prod.js --mode production",
+    "publish": "git subtree push --prefix dist origin gh-pages"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.8.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "gh-pages": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.6.2",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dashboard": "^2.0.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-media-player": "^0.7.5"
+  }
+}

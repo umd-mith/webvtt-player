@@ -1,0 +1,15 @@
+.active {
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+
+.line {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.time {
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: smaller;
+}

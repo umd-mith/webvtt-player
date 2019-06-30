@@ -1,0 +1,15 @@
+.metadata {
+  border: thin solid #ccc;
+  padding: 0px 10px 5px 10px;
+}
+
+dt {
+  font-size: smaller;
+  font-weight: bold;
+}
+
+dd {
+  text-indent: 0;
+  margin-left: 0px;
+  margin-bottom: 10px;
+}
