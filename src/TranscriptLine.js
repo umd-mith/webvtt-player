@@ -50,7 +50,8 @@ class TranscriptLine extends React.Component {
 
 TranscriptLine.propTypes = {
   media: PropTypes.object,
-  cue: PropTypes.object
+  cue: PropTypes.object,
+  onClick: PropTypes.func
 }
 
 export default withMediaProps(TranscriptLine)

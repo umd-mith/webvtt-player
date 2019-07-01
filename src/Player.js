@@ -25,9 +25,7 @@ class Player extends React.Component {
       track = this.track.current.track
     }
     return (
-
       <div className={style.item}>
-
         <rmp.Media>
           <div className={style.media}>
             <div className={style.player}>
@@ -50,7 +48,6 @@ class Player extends React.Component {
             </div>
           </div>
         </rmp.Media>
-
       </div>
     )
   }
@@ -64,7 +61,6 @@ class Player extends React.Component {
 Player.propTypes = {
   audio: PropTypes.string,
   transcript: PropTypes.string,
-  metadata: PropTypes.string
 }
 
 export default Player

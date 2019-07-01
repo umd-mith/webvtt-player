@@ -6,14 +6,6 @@ import TranscriptLine from './TranscriptLine'
 
 class Transcript extends React.Component {
 
-  constructor(props) {
-    super(props)
-  }
-
-  componentDidMount() {
-    console.log(this.props.url)
-  }
-
   render() {
     const lines = []
     if (this.props.track) {
@@ -21,7 +13,8 @@ class Transcript extends React.Component {
         lines.push(
           <TranscriptLine
             key={`line-${i}`}
-            cue={this.props.track.cues[i]} />
+            cue={this.props.track.cues[i]} 
+            active={false} />
         )
       }
     }
@@ -33,7 +26,6 @@ class Transcript extends React.Component {
   }
 
 }
-
 
 Transcript.propTypes = {
   media: PropTypes.object,

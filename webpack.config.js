@@ -8,7 +8,8 @@ module.exports = {
     filename: `[name].js`,
     path: path.resolve(__dirname, './dist'),
     library: ['Viewer'],
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
