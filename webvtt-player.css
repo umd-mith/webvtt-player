@@ -1,0 +1,42 @@
+.webvtt-player {
+  display: -webkit-box;
+  display: flex;
+}
+
+.webvtt-player .media {
+  width: 400px;
+  border: thin solid #ccc;
+  margin-right: auto;
+}
+
+.webvtt-player .controls {
+  padding: 5px;
+  text-align: center;
+  vertical-align: text-top;
+  background-color: #ccc;
+}
+
+.webvtt-player .seekBar {
+  vertical-align: middle;
+  width: 70%;
+}
+.webvtt-player .active {
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+
+.webvtt-player .line {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.webvtt-player .time {
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: smaller;
+}
+.webvtt-player .transcript {
+  height: 90vh;
+  padding: 10px;
+  overflow-y: scroll;
+}
