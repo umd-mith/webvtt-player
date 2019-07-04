@@ -2,20 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import * as rmp from 'react-media-player'
 
-import style from './Player.css'
 import Transcript from './Transcript'
+import './Player.css'
 
 const { PlayPause, SeekBar } = rmp.controls
 
 class Player extends React.Component {
 
   constructor(props) {
+    console.log('webvtt-player started')
     super(props)
     this.state = {
       ready: false,
     }
     this.track = React.createRef()
     this.onReady = this.onReady.bind(this)
+  }
+
+  componentDidMount() {
+    console.log('webvtt-player mounted')
+    window.addEventListener('load', this.onReady)
   }
 
   render () {
@@ -25,10 +31,10 @@ class Player extends React.Component {
       track = this.track.current.track
     }
     return (
-      <div className={style.item}>
+      <div className="webvtt-player">
         <rmp.Media>
-          <div className={style.media}>
-            <div className={style.player}>
+          <div className="media">
+            <div className="player">
               <rmp.Player
                 src={this.props.audio}
                 onReady={this.onReady}
@@ -39,11 +45,11 @@ class Player extends React.Component {
                   ref={this.track} />
               </rmp.Player>
             </div>
-            <div className={style.controls}>
-              <SeekBar className={style.seekBar} />
+            <div className="controls">
+              <SeekBar className="seekBar" />
               <PlayPause />
             </div>
-            <div className={style.transcript}>
+            <div className="transcript">
               <Transcript url={this.props.transcript} track={track} />
             </div>
           </div>
@@ -52,7 +58,8 @@ class Player extends React.Component {
     )
   }
 
-  onReady () {
+  onReady() {
+    console.log('webvtt-player loaded')
     this.setState({ready: true})
   }
 

@@ -8,9 +8,9 @@
     "type": "git",
     "url": "https://github.com/edsu/webvtt-player.git"
   },
-  "main": "dist/webvtt-player.js",
+  "main": "./dist/webvtt-player.js",
   "files": [
-    "dist/"
+    "./dist/"
   ],
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --mode development",
@@ -24,14 +24,17 @@
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.6.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-react": "^7.11.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "postcss-loader": "^3.0.0",
     "prop-types": "^15.6.2",
     "style-loader": "^0.23.1",
     "webpack": "^4.16.5",

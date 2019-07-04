@@ -1,14 +1,14 @@
-.active {
+.webvtt-player .active {
   background-color: #eee;
   border: 1px solid #ccc;
 }
 
-.line {
+.webvtt-player .line {
   padding: 5px;
   cursor: pointer;
 }
 
-.time {
+.webvtt-player .time {
   padding-right: 10px;
   font-weight: bold;
   font-size: smaller;

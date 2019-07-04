@@ -1,27 +1,21 @@
-.item {
+.webvtt-player {
   display: flex;
 }
 
-.metadata {
-  width: 400px;
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.media {
+.webvtt-player .media {
   width: 400px;
   border: thin solid #ccc;
   margin-right: auto;
 }
 
-.controls {
+.webvtt-player .controls {
   padding: 5px;
   text-align: center;
   vertical-align: text-top;
   background-color: #ccc;
 }
 
-.seekBar {
+.webvtt-player .seekBar {
   vertical-align: middle;
   width: 70%;
 }

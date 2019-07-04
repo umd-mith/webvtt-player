@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withMediaProps } from 'react-media-player'
-import style from './Transcript.css'
 import TranscriptLine from './TranscriptLine'
+import './Transcript.css'
 
 class Transcript extends React.Component {
 
@@ -19,7 +19,7 @@ class Transcript extends React.Component {
       }
     }
     return (
-      <div className={style.transcript}>
+      <div className="transcript">
         {lines}
       </div>
     )

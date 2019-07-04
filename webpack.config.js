@@ -1,15 +1,16 @@
-const path = require('path');
+const path = require("path")
 
 module.exports = {
   entry: {
-    'webvtt-player': './src/index.js'
+    'webvtt-player': path.resolve(__dirname, './src/index.js')
   },
   output: {
     filename: `[name].js`,
-    path: path.resolve(__dirname, './dist'),
-    library: ['Viewer'],
+    path: path.resolve(__dirname, 'dist'),
+    library: 'webvttPlayer',
     libraryTarget: 'umd',
-    umdNamedDefine: true
+    umdNamedDefine: true,
+    globalObject: 'this'
   },
   module: {
     rules: [
@@ -17,23 +18,6 @@ module.exports = {
         test: /\.js$/,
         use: ["babel-loader", "eslint-loader"],
         exclude: /node_modules/
-      },
-      {
-        test: /.css$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              modules: {
-                localIdentName: '[name]---[local]---[hash:base64:5]'
-              }
-            }
-          }
-        ]
       }
     ]
   },

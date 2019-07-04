@@ -15,7 +15,7 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   entry: {
-    "webvtt-player": './example/index.js',
+    "webvtt-player": path.resolve(__dirname, './example/index.js')
   },
   output: {
     filename: `[name].js`,
@@ -24,6 +24,27 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './example'
+  },
+  module: {
+    rules: [
+      {
+        test: /.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                localIdentName: '[local]'
+              }
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     htmlWebpackPlugin,
