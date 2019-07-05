@@ -1,25 +1,3 @@
-.webvtt-player {
-  display: -webkit-box;
-  display: flex;
-}
-
-.webvtt-player .media {
-  width: 400px;
-  border: thin solid #ccc;
-  margin-right: auto;
-}
-
-.webvtt-player .controls {
-  padding: 5px;
-  text-align: center;
-  vertical-align: text-top;
-  background-color: #ccc;
-}
-
-.webvtt-player .seekBar {
-  vertical-align: middle;
-  width: 70%;
-}
 .webvtt-player .active {
   background-color: #eee;
   border: 1px solid #ccc;
@@ -39,4 +17,30 @@
   height: 90vh;
   padding: 10px;
   overflow-y: scroll;
+}
+.webvtt-player {
+  display: -webkit-box;
+  display: flex;
+}
+
+.webvtt-player .media {
+  width: 400px;
+  border: thin solid #ccc;
+  margin-right: auto;
+}
+
+.webvtt-player audio {
+  width: 100%;
+}
+
+.webvtt-player .controls {
+  padding: 5px;
+  text-align: center;
+  vertical-align: text-top;
+  background-color: #ccc;
+}
+
+.webvtt-player .seekBar {
+  vertical-align: middle;
+  width: 70%;
 }
