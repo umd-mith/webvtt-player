@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withMediaProps } from 'react-media-player'
 import TranscriptLine from './TranscriptLine'
 import './Transcript.css'
 
@@ -8,13 +7,14 @@ class Transcript extends React.Component {
 
   render() {
     const lines = []
-    if (this.props.track) {
+    if (this.props.track && this.props.track.cues) {
       for (let i = 0; i < this.props.track.cues.length; i++) {
         lines.push(
           <TranscriptLine
             key={`line-${i}`}
             cue={this.props.track.cues[i]} 
-            active={false} />
+            active={false} 
+            seek={this.props.seek} />
         )
       }
     }
@@ -28,9 +28,9 @@ class Transcript extends React.Component {
 }
 
 Transcript.propTypes = {
-  media: PropTypes.object,
   track: PropTypes.object,
-  url: PropTypes.string
+  url: PropTypes.string,
+  seek: PropTypes.func
 }
 
-export default withMediaProps(Transcript)
+export default Transcript

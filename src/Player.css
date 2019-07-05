@@ -8,6 +8,10 @@
   margin-right: auto;
 }
 
+.webvtt-player audio {
+  width: 100%;
+}
+
 .webvtt-player .controls {
   padding: 5px;
   text-align: center;

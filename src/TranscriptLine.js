@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withMediaProps } from 'react-media-player'
 import './TranscriptLine.css'
 
 class TranscriptLine extends React.Component {
@@ -18,7 +17,7 @@ class TranscriptLine extends React.Component {
   render() {
     let active = this.state.isActive ? 'active' : ''
     // note: daangerouslySetInnerHTML is used because the text
-    // may contain HTML entities.
+    // may contain HTML.
     return (
       <div className={active + ' line'} onClick={this.onClick}>
         <span className="time">
@@ -42,16 +41,14 @@ class TranscriptLine extends React.Component {
   }
 
   onClick() {
-    this.props.media.seekTo(this.props.cue.startTime)
-    this.props.media.play()
+    this.props.seek(this.props.cue.startTime)
   }
 
 }
 
 TranscriptLine.propTypes = {
-  media: PropTypes.object,
   cue: PropTypes.object,
-  onClick: PropTypes.func
+  seek: PropTypes.func
 }
 
-export default withMediaProps(TranscriptLine)
+export default TranscriptLine
