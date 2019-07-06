@@ -42,9 +42,7 @@ class Player extends React.Component {
                 ref={this.track} />
             </audio>
           </div>
-          <div className="transcript">
-            <Transcript url={this.props.transcript} seek={this.seek} track={track} />
-          </div>
+          <Transcript url={this.props.transcript} seek={this.seek} track={track} />
         </div>
       </div>
     )

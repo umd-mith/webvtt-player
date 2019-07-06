@@ -1,6 +1,6 @@
 {
   "name": "webvtt-player",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "View WebVTT as a transcript",
   "author": "Ed Summers <ehs@pobox.com>",
   "license": "MIT",
@@ -8,9 +8,9 @@
     "type": "git",
     "url": "https://github.com/edsu/webvtt-player.git"
   },
-  "main": "./dist/webvtt-player.js",
+  "main": "dist/webvtt-player.js",
   "files": [
-    "./dist/"
+    "dist/"
   ],
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --mode development",
