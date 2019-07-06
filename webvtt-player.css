@@ -13,11 +13,6 @@
   font-weight: bold;
   font-size: smaller;
 }
-.webvtt-player .transcript {
-  height: 90vh;
-  padding: 10px;
-  overflow-y: scroll;
-}
 .webvtt-player {
   display: -webkit-box;
   display: flex;
@@ -43,4 +38,9 @@
 .webvtt-player .seekBar {
   vertical-align: middle;
   width: 70%;
+}
+.webvtt-player .transcript {
+  height: 90vh;
+  padding: 10px;
+  overflow-y: scroll;
 }
