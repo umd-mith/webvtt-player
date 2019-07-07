@@ -23,7 +23,6 @@ class Player extends React.Component {
 
   render () {
     let track = null
-    // the track element won't be ready till the DOM is loaded
     if (this.state.loaded) {
       track = this.track.current.track
     }
@@ -49,17 +48,17 @@ class Player extends React.Component {
   }
 
   onLoaded() {
-    console.log('webvtt-player loaded')
     this.setState({loaded: true})
   }
 
-  checkIfLoaded() {
-    if (this.audio.current) {
-      console.log('checkIfLoaded true')
+  checkIfLoaded(tries=0) {
+    tries += 1
+    const e = this.track.current
+    if (e && e.track && e.track.cues.length > 0) {
       this.onLoaded()
     } else {
-      console.log('checkIfLoaded false  ')
-      setTimeout(this.checkIfLoaded, 500)
+      const wait = 25 * Math.pow(tries, 2)
+      setTimeout(() => this.checkIfLoaded(tries), wait)
     }
   }
 
