@@ -15,7 +15,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --mode development",
     "build": "webpack --config webpack.prod.js --mode production",
-    "publish": "git subtree push --prefix dist origin gh-pages"
+    "publish": "webpack --config webpack.public.js --mode production && node utils/github-publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -27,6 +27,7 @@
     "autoprefixer": "^9.6.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.1",
