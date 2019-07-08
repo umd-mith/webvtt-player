@@ -4,8 +4,9 @@
 view its [WebVTT] subtitles as a an interactive transcript. Take a look at the
 example site to get a sense of what it does.
 
-    npm install webvtt-player
-
+```bash
+$ npm install webvtt-player
+```
 
 ```javascript
 import {Player} from "webvtt-player"
