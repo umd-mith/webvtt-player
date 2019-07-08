@@ -1,9 +1,5 @@
-.webvtt-player {
-  display: flex;
-}
-
 .webvtt-player .media {
-  width: 400px;
+  width: 100%;
   border: thin solid #ccc;
   margin-right: auto;
 }
