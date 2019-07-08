@@ -1,8 +1,8 @@
 # webvtt-player
 
 *webvtt-player* is a [React] component that lets you play an audio file while
-view its [WebVTT] subtitles as a an interactive transcript. Take a look at the
-[example site] to get a sense of what it does.
+viewing its [WebVTT] subtitles as a an interactive transcript. Take a look at the
+[example site] to get a sense of what this means.
 
 ```bash
 $ npm install webvtt-player
