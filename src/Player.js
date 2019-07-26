@@ -5,8 +5,8 @@ import './Player.css'
 
 class Player extends React.Component {
 
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       loaded: false,
       currentTime: 0
@@ -17,7 +17,9 @@ class Player extends React.Component {
     this.onLoaded = this.onLoaded.bind(this)
     this.seek = this.seek.bind(this)
     this.checkIfLoaded = this.checkIfLoaded.bind(this)
+  }
 
+  componentDidMount() {
     this.checkIfLoaded()
   }
 
@@ -32,9 +34,10 @@ class Player extends React.Component {
           <div className="player">
             <audio
               controls
-              src={this.props.audio}
+              crossOrigin="anonymous"
               onLoad={this.onLoaded}
               ref={this.audio}>
+              <source src={this.props.audio} />
               <track default
                 kind="subtitles"
                 src={this.props.transcript}
@@ -54,11 +57,11 @@ class Player extends React.Component {
   checkIfLoaded(tries=0) {
     tries += 1
     const e = this.track.current
-    if (e && e.track && e.track.cues.length > 0) {
+    if (e && e.track && e.track.cues && e.track.cues.length > 0) {
       this.onLoaded()
-    } else {
+    } else if (! this.state.loaded) {
       const wait = 25 * Math.pow(tries, 2)
-      setTimeout(() => this.checkIfLoaded(tries), wait)
+      setTimeout(this.checkIfLoaded, wait, tries)
     }
   }
 

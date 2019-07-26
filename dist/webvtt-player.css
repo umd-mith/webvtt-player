@@ -1,8 +1,3 @@
-.webvtt-player .transcript {
-  height: 90vh;
-  padding: 10px;
-  overflow-y: scroll;
-}
 .webvtt-player .active {
   background-color: #eee;
   border: 1px solid #ccc;
@@ -17,6 +12,11 @@
   padding-right: 10px;
   font-weight: bold;
   font-size: smaller;
+}
+.webvtt-player .transcript {
+  height: 90vh;
+  padding: 10px;
+  overflow-y: scroll;
 }
 .webvtt-player .media {
   width: 100%;
