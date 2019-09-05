@@ -16,7 +16,7 @@
     "start": "webpack-dev-server --config webpack.dev.js --mode development",
     "build": "webpack --config webpack.prod.js --mode production",
     "build-public": "webpack --config webpack.public.js --mode production",
-    "publish": "webpack --config webpack.public.js --mode production && node utils/github-publish"
+    "publish": "npm run build-public && node utils/github-publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
