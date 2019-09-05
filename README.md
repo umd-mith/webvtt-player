@@ -41,12 +41,14 @@ provide an anchor element with the id `webvtt-player` and use `data-audio` and
 `data-transcript` attributes to point to the audio and transcript files:
 
 ```html
-<div id="webvtt-player" data-audio="data/audio.mp3" data-transcript="data/transcript.vtt"></div>
+<div id="webvtt-player"
+     data-audio="data/audio.mp3"
+     data-transcript="data/transcript.vtt" />
 ```
 
 You should be able to find the latest build as part of the webvtt demo site:
 
-    https://umd-mith.github.io/webvtt-player/webvtt-player.js
+https://umd-mith.github.io/webvtt-player/webvtt-player.js
 
 To generate the JavaScript file run the following command which will write them
 to the `public` directory:
