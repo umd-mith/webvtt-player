@@ -42,8 +42,8 @@ provide an anchor element with the id `webvtt-player` and use `data-audio` and
 
 ```html
 <div id="webvtt-player"
-     data-audio="data/audio.mp3"
-     data-transcript="data/transcript.vtt" />
+     data-audio="audio.mp3"
+     data-transcript="transcript.vtt" />
 ```
 
 You should be able to find the latest build as part of the webvtt demo site:
