@@ -38,7 +38,7 @@ import {Player} from "webvtt-player"
 You can use webvtt-player outside of a React project if you use the built
 JavaScript bundle from the latest release directly in the browser. Simply
 provide an anchor element with the id `webvtt-player` and use `data-audio` and
-`data-transcript` attributes to point to the audio and transcript files.
+`data-transcript` attributes to point to the audio and transcript files:
 
     <div id="webvtt-player" data-audio="data/audio.mp3" data-transcript="data/transcript.vtt"></div>
 
