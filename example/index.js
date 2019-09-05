@@ -2,9 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Player } from '../src/'
 
+const root = document.getElementById('webvtt-player')
+
 ReactDOM.render(
   <Player
-    audio="data/audio.mp3"
-    transcript="data/transcript.vtt" />,
-  document.getElementById('root')
+    audio={root.dataset.audio}
+    transcript={root.dataset.transcript} />,
+  root
 )
