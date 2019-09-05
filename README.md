@@ -32,3 +32,11 @@ import {Player} from "webvtt-player"
 [example site]: https://umd-mith.github.io/webvtt-player
 [Unlocking the Airwaves]: https://mith.umd.edu/research/unlocking-the-airwaves/
 [National Endowment for the Humanities]: https://www.neh.gov/
+
+### To use without React
+
+    npm run build-public
+
+This will generate a JS file in `/public` that can be used in the browser. Provide an anchor element with the id `webvtt-player` and provide URLs to audio and transcript as data attributes:
+
+    <div id="webvtt-player" data-audio="data/audio.mp3" data-transcript="data/transcript.vtt"></div>
