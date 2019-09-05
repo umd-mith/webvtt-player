@@ -36,7 +36,7 @@ import {Player} from "webvtt-player"
 ### Using Without React
 
 You can use webvtt-player outside of a React project if you use the built
-JavaScript files from the latest release directly in the browser. Simply provide
+JavaScript file from the latest release directly in the browser. Simply provide
 an anchor element with the id `webvtt-player` and provide URLs to audio and
 transcript as data attributes:
 
