@@ -35,8 +35,10 @@ import {Player} from "webvtt-player"
 
 ### To use without React
 
-    npm run build-public
-
-This will generate a JS file in `/public` that can be used in the browser. Provide an anchor element with the id `webvtt-player` and provide URLs to audio and transcript as data attributes:
+Use the built JS files from the latest release directly in the browser. Provide an anchor element with the id `webvtt-player` and provide URLs to audio and transcript as data attributes:
 
     <div id="webvtt-player" data-audio="data/audio.mp3" data-transcript="data/transcript.vtt"></div>
+
+To generate those JS files run the following command. They will go into `/public`.
+
+    npm run build-public
