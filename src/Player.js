@@ -28,6 +28,7 @@ class Player extends React.Component {
     if (this.state.loaded) {
       track = this.track.current.track
     }
+    const preload = this.props.preload ? "true" : "false"
     return (
       <div className="webvtt-player">
         <div className="media">
@@ -36,6 +37,7 @@ class Player extends React.Component {
               controls
               crossOrigin="anonymous"
               onLoad={this.onLoaded}
+              preload={preload}
               ref={this.audio}>
               <source src={this.props.audio} />
               <track default
@@ -75,6 +77,7 @@ class Player extends React.Component {
 Player.propTypes = {
   audio: PropTypes.string,
   transcript: PropTypes.string,
+  preload: PropTypes.bool
 }
 
 export default Player
