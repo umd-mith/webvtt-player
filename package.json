@@ -1,6 +1,6 @@
 {
   "name": "webvtt-player",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "View WebVTT as a transcript",
   "author": "Ed Summers <ehs@pobox.com>",
   "license": "MIT",
