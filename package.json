@@ -1,6 +1,6 @@
 {
   "name": "webvtt-player",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "View WebVTT as a transcript",
   "author": "Ed Summers <ehs@pobox.com>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "autoprefixer": "^9.6.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
-    "copy-webpack-plugin": "^5.0.3",
+    "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.1",
@@ -47,8 +47,6 @@
   },
   "dependencies": {
     "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-media-player": "^0.7.5",
-    "react-redux": "^7.1.0"
+    "react-dom": "^16.6.0"
   }
 }

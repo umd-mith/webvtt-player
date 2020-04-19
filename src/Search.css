@@ -1,0 +1,25 @@
+.search {
+  border-top: thin solid #ccc;
+  padding: 5px 5px 5px 5px;
+  font-size: 14pt;
+  margin-top: 5px;
+}
+
+.search .container {
+  border: thin solid #ccc;
+}
+
+.search input {
+  font-size: 12pt;
+  border: none;
+  width: 90%;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.search .icon {
+  padding-left: 5px;
+  padding-right: 5px;
+}

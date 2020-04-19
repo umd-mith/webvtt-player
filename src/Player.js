@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Transcript from './Transcript'
+import Search from './Search'
 import './Player.css'
 
 class Player extends React.Component {
@@ -9,7 +10,8 @@ class Player extends React.Component {
     super()
     this.state = {
       loaded: false,
-      currentTime: 0
+      currentTime: 0,
+      query: ''
     }
     this.track = React.createRef()
     this.audio = React.createRef()
@@ -17,6 +19,7 @@ class Player extends React.Component {
     this.onLoaded = this.onLoaded.bind(this)
     this.seek = this.seek.bind(this)
     this.checkIfLoaded = this.checkIfLoaded.bind(this)
+    this.updateQuery = this.updateQuery.bind(this)
   }
 
   componentDidMount() {
@@ -46,7 +49,12 @@ class Player extends React.Component {
                 ref={this.track} />
             </audio>
           </div>
-          <Transcript url={this.props.transcript} seek={this.seek} track={track} />
+          <Transcript 
+            url={this.props.transcript} 
+            seek={this.seek} 
+            track={track} 
+            query={this.state.query} />
+          <Search query={this.state.query} updateQuery={this.updateQuery} />
         </div>
       </div>
     )
@@ -72,12 +80,17 @@ class Player extends React.Component {
     this.audio.current.play()
   }
 
+  updateQuery(query) {
+    this.setState({query: query})
+  }
+
 }
 
 Player.propTypes = {
   audio: PropTypes.string,
   transcript: PropTypes.string,
-  preload: PropTypes.bool
+  preload: PropTypes.bool,
+  query: PropTypes.string
 }
 
 export default Player

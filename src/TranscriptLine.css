@@ -3,13 +3,22 @@
   border: 1px solid #ccc;
 }
 
+.webvtt-player .match {
+  background-color: lightyellow;
+}
+
 .webvtt-player .line {
   padding: 5px;
   cursor: pointer;
 }
 
 .webvtt-player .time {
-  padding-right: 10px;
-  font-weight: bold;
-  font-size: smaller;
+  width: 110px;
+  float: left;
+  font-size: 10pt;
+  line-height: 14pt;
+}
+
+.webvtt-player .text {
+  margin-left: 110px;
 }

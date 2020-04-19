@@ -14,7 +14,8 @@ class Transcript extends React.Component {
             key={`line-${i}`}
             cue={this.props.track.cues[i]} 
             active={false} 
-            seek={this.props.seek} />
+            seek={this.props.seek} 
+            query={this.props.query} />
         )
       }
     }
@@ -30,7 +31,8 @@ class Transcript extends React.Component {
 Transcript.propTypes = {
   track: PropTypes.object,
   url: PropTypes.string,
-  seek: PropTypes.func
+  seek: PropTypes.func,
+  query: PropTypes.string
 }
 
 export default Transcript

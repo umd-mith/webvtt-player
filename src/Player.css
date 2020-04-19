@@ -6,7 +6,13 @@
 
 .webvtt-player audio {
   width: 100%;
+  background-color: #ccc;
 }
+
+.webvtt-player audio::-webkit-media-controls-panel {
+  background-color: #ccc;
+}
+
 
 .webvtt-player .controls {
   padding: 5px;

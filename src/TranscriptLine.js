@@ -15,18 +15,21 @@ class TranscriptLine extends React.Component {
   }
 
   render() {
-    let active = this.state.isActive ? 'active' : ''
-    // note: daangerouslySetInnerHTML is used because the text
-    // may contain HTML.
+    let style = ''
+    if (this.props.query && this.props.cue.text.match(new RegExp(this.props.query, 'i'))) {
+      style = 'match'
+    } else if (this.state.isActive) {
+      style = 'active'
+    }
+
+    // note: dangerouslySetInnerHTML is used because the text may contain HTML
     return (
-      <div className={active + ' line'} onClick={this.onClick}>
-        <span className="time">
-          [{this.props.cue.startTime}
-          -
-          {this.props.cue.endTime}]
-        </span>
-        <span
-          className="text"
+      <div className={`${style} line`} onClick={this.onClick}>
+        <div className="time">
+          [{this.startTime()} - {this.endTime()}]
+        </div>
+        <div
+          className={`${style} text`}
           dangerouslySetInnerHTML={{__html: this.props.cue.text}} />
       </div>
     )
@@ -44,11 +47,34 @@ class TranscriptLine extends React.Component {
     this.props.seek(this.props.cue.startTime)
   }
 
+  startTime() {
+    return this.formatSeconds(this.props.cue.startTime)
+  }
+
+  endTime() {
+    return this.formatSeconds(this.props.cue.endTime)
+  }
+
+  formatSeconds(t) {
+    let mins = Math.floor(t / 60)
+    if (mins < 10) {
+      mins = `0${mins}`
+    }
+
+    let secs = Math.floor(t % 60)
+    if (secs < 10) {
+      secs = `0${secs}`
+    }
+
+    return `${mins}:${secs}`
+  }
+
 }
 
 TranscriptLine.propTypes = {
   cue: PropTypes.object,
-  seek: PropTypes.func
+  seek: PropTypes.func,
+  query: PropTypes.string,
 }
 
 export default TranscriptLine
