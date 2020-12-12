@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Transcript from './Transcript'
+import Metadata from './Metadata'
 import Search from './Search'
 import './Player.css'
 
@@ -14,6 +15,7 @@ class Player extends React.Component {
       query: ''
     }
     this.track = React.createRef()
+    this.metatrack = React.createRef()
     this.audio = React.createRef()
 
     this.onLoaded = this.onLoaded.bind(this)
@@ -28,10 +30,18 @@ class Player extends React.Component {
 
   render () {
     let track = null
+    let metatrack = null
     if (this.state.loaded) {
       track = this.track.current.track
+      metatrack = this.metatrack.current.track
     }
     const preload = this.props.preload ? "true" : "false"
+    const metadata = this.props.metadata
+      ? <Metadata
+        url={this.props.metadata}
+        seek={this.seek}
+        track={metatrack} />
+      : ""
     return (
       <div className="webvtt-player">
         <div className="media">
@@ -47,13 +57,20 @@ class Player extends React.Component {
                 kind="subtitles"
                 src={this.props.transcript}
                 ref={this.track} />
+              <track default
+                kind="metadata"
+                src={this.props.metadata}
+                ref={this.metatrack} />
             </audio>
           </div>
-          <Transcript 
-            url={this.props.transcript} 
-            seek={this.seek} 
-            track={track} 
-            query={this.state.query} />
+          <div className="tracks">
+            <Transcript 
+              url={this.props.transcript} 
+              seek={this.seek} 
+              track={track} 
+              query={this.state.query} />
+            {metadata}
+          </div>
           <Search query={this.state.query} updateQuery={this.updateQuery} />
         </div>
       </div>
@@ -89,6 +106,7 @@ class Player extends React.Component {
 Player.propTypes = {
   audio: PropTypes.string,
   transcript: PropTypes.string,
+  metadata: PropTypes.string,
   preload: PropTypes.bool,
   query: PropTypes.string
 }

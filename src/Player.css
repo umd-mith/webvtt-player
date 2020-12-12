@@ -13,6 +13,9 @@
   background-color: #ccc;
 }
 
+.webvtt-player .tracks {
+  display: flex;
+}
 
 .webvtt-player .controls {
   padding: 5px;
