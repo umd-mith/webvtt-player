@@ -20,6 +20,50 @@ import {Player} from "webvtt-player"
   transcript="https://example.org/transcript.vtt" />
 ```
 
+### OHMS Metadata Track
+
+*webvtt-player* can also display a WebVTT metadata track. The metadata object is modeled
+after the [OHMS Indexing system](http://ohda.matrix.msu.edu/2014/11/indexing-interviews-in-ohms/).
+
+Fields supported:
+
+```json
+{
+  "title": "",
+  "title_alt": "",
+  "synopsis": "",
+  "synopsis_alt": "",
+  "keywords": "",
+  "keywords_alt": "",
+  "subjects": "",
+  "subjects_alt": "",
+  "gpspoints": {
+    "gps": "00.0000000, 00.0000000",
+    "gps_zoom": "0",
+    "gps_text": "",
+    "gps_text_alt": ""
+  },
+  "hyperlinks": {
+    "hyperlink": "http://example.org",
+    "hyperlink_text": "",
+    "hyperlink_text_alt":, ""
+  }
+}
+```
+
+`gpspoints` will be displayed as a link to Google Maps and `hyperlinks` will be displayed as a link.
+
+The metadata track can be loaded with the `metadata` parameter.
+
+```javascript
+import {Player} from "webvtt-player"
+
+<Player
+  audio="https://example.org/audio.mp3"
+  transcript="https://example.org/transcript.vtt"
+  metadata="https://example.org/metadata.vtt" />
+```
+
 ### Demo
 
     npm install
@@ -38,12 +82,13 @@ import {Player} from "webvtt-player"
 You can use webvtt-player outside of a React project if you use the built
 JavaScript bundle from the [latest release](https://github.com/umd-mith/webvtt-player/releases) directly in the browser. Simply
 provide an anchor element with the id `webvtt-player` and use `data-audio` and
-`data-transcript` attributes to point to the audio and transcript files:
+`data-transcript` attributes to point to the audio and transcript files (`data-metadata` is optional):
 
 ```html
 <div id="webvtt-player"
      data-audio="audio.mp3"
-     data-transcript="transcript.vtt" />
+     data-transcript="transcript.vtt"
+     data-metadata="metadata.vtt" />
 ```
 
 You should be able to find the latest build as part of the webvtt demo site:
