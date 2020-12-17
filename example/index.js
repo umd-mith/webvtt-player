@@ -8,6 +8,7 @@ ReactDOM.render(
   <Player
     audio={root.dataset.audio}
     transcript={root.dataset.transcript}
+    metadata={root.dataset.metadata}
     preload={true} />,
   root
 )

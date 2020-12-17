@@ -1,0 +1,37 @@
+.webvtt-player .point {
+  padding: 5px;
+}
+
+.webvtt-player .time {
+  width: 110px;
+  float: left;
+  font-size: 10pt;
+  line-height: 14pt;
+  cursor: pointer;
+}
+
+.webvtt-player .text {
+  margin-left: 110px;
+}
+
+.webvtt-player .title {
+  font-weight: bold;
+  font-size: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+.webvtt-player .titleAlt {
+  font-style: italic;
+  font-weight: normal;
+  font-size: inherit;
+  margin: 0;
+}
+
+.webvtt-player .field {
+  margin-top: 5px;
+}
+
+.webvtt-player .field span {
+  font-style: italic;
+}

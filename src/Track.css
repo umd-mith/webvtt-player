@@ -1,4 +1,5 @@
-.webvtt-player .transcript {
+.webvtt-player .track {
+  flex: 6;
   height: 90vh;
   padding: 10px;
   overflow-y: scroll;

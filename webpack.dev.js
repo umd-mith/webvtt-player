@@ -5,9 +5,15 @@ const common = require('./webpack.config.js')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
-const htmlWebpackPlugin = new HtmlWebpackPlugin({
+const transcript = new HtmlWebpackPlugin({
     template: path.join(__dirname, "./example/index.html"),
     filename: "./index.html",
+    inlineSource: '\.(js|css)',
+})
+
+const metadata = new HtmlWebpackPlugin({
+    template: path.join(__dirname, "./example/annotations.html"),
+    filename: "./annotations.html",
     inlineSource: '\.(js|css)',
 })
 
@@ -47,7 +53,8 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
-    htmlWebpackPlugin,
+    transcript,
+    metadata,
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin()
   ],
