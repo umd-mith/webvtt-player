@@ -1,6 +1,6 @@
 {
   "name": "webvtt-player",
-  "version": "0.0.13",
+  "version": "0.0.16",
   "description": "View WebVTT as a transcript",
   "author": "Ed Summers <ehs@pobox.com>",
   "license": "MIT",
@@ -42,7 +42,7 @@
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
     "webpack-dashboard": "^3.0.7",
-    "webpack-dev-server": "^3.7.2",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {

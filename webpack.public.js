@@ -29,8 +29,12 @@ module.exports = merge(common, {
       {
         from: path.resolve(exampleDir, 'data'),
         to: 'data'
+      },
+      {
+        from: path.resolve(exampleDir, 'style.css'),
+        to: '.'
       }
-    ])
+    ]),
   ],
   module: {
     rules: [
