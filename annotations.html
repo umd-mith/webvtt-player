@@ -4,9 +4,9 @@
   <head>
     <title>webvtt-player</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="with-annotations">
     <header>
       webvtt-player
       <a href="https://github.com/umd-mith/webvtt-player"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" className="" alt="Fork me on GitHub" data-recalc-dims="1"></a>
@@ -16,13 +16,17 @@
       <br />
       <a href="https://www.youtube.com/watch?v=6TlcPRlau2Q&t=557s">2016 Nobel Lecture in Literature</a> by <a href="https://en.wikipedia.org/wiki/Bob_Dylan">Bob Dylan</a>
     </p> 
+    
     <p>
       audio: <a href="data/audio.mp3">audio.mp3</a><br>
-      transcript: <a href="data/transcript.vtt">transcript.vtt</a>
+      transcript: <a href="data/transcript.vtt">transcript.vtt</a><br>
+      metadata: <a href="data/metadata.vtt">metadata.vtt</a>
     </p>
+
     <p>
-      <a href="annotations.html"><button>With Metadata</button></a>
+      <a href="index.html"><button>Without Metadata</button></a>
     </p>
-      <div id="webvtt-player" data-audio="data/audio.mp3" data-transcript="data/transcript.vtt"</div>
+
+    <div id="webvtt-player" class="annotations" data-audio="data/audio.mp3" data-transcript="data/transcript.vtt" data-metadata="data/metadata.vtt"></div>
   <script type="text/javascript" src="webvtt-player.js"></script></body>
 </html>
