@@ -20,6 +20,11 @@ module.exports = merge(common, {
       filename: path.resolve(publicDir, 'index.html'),
       inject: 'body',
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(exampleDir, 'annotations.html'),
+      filename: path.resolve(publicDir, 'annotations.html'),
+      inject: 'body',
+    }),
     new CopyWebpackPlugin([
       {
         from: path.resolve(exampleDir, 'data'),
