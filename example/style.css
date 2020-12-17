@@ -2,11 +2,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
-}
-
-body.with-annotations {
-  width: 800px;
+  width: 100%;
 }
 
 header {
@@ -18,9 +14,6 @@ header {
 
 header a {
   display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
 }
 
 p {
@@ -43,4 +36,29 @@ button {
 
 .with-annotations button {
   background-color: pink;
+}
+
+/* 
+ * On large displays show the ithub banner and adjust the size of the 
+ * transcript display.
+ */
+
+@media (min-device-width: 600px) {
+
+  header a {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  body {
+    width: 600px;
+  }
+
+  body.with-annotations {
+    width: 800px;
+  }
+}
+
 }
