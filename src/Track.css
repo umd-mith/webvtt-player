@@ -1,6 +1,6 @@
 .webvtt-player .track {
   flex: 6;
-  height: 90vh;
+  height: 12vh;
   padding: 10px;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }

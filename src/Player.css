@@ -1,6 +1,6 @@
 .webvtt-player .media {
   width: 100%;
-  border: thin solid #ccc;
+  border: 0;
   margin-right: auto;
 }
 
