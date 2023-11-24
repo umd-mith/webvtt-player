@@ -8,12 +8,16 @@ viewing its [WebVTT] subtitles as an interactive transcript. Take a look at the
 which received generous support from the [National Endowment for the
 Humanities].
 
+---
+
+Modified by [GhentCDH] for the [Dialectloket] project.
+
 ```bash
 $ npm install webvtt-player
 ```
 
 ```javascript
-import {Player} from "webvtt-player"
+import {Player} from "webvtt-player";
 
 <Player
   audio="https://example.org/audio.mp3"
@@ -46,7 +50,7 @@ Fields supported:
   "hyperlinks": {
     "hyperlink": "http://example.org",
     "hyperlink_text": "",
-    "hyperlink_text_alt":, ""
+    "hyperlink_text_alt": ""
   }
 }
 ```
@@ -56,7 +60,7 @@ Fields supported:
 The metadata track can be loaded with the `metadata` parameter.
 
 ```javascript
-import {Player} from "webvtt-player"
+import {Player} from "webvtt-player";
 
 <Player
   audio="https://example.org/audio.mp3"
@@ -76,6 +80,8 @@ import {Player} from "webvtt-player"
 [example site]: https://umd-mith.github.io/webvtt-player
 [Unlocking the Airwaves]: https://mith.umd.edu/research/unlocking-the-airwaves/
 [National Endowment for the Humanities]: https://www.neh.gov/
+[GhentCDH]: https://www.dialectloket.be/
+[Dialectloket]: https://www.ghentcdh.ugent.be/
 
 ### Using Without React
 
