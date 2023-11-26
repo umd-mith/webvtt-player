@@ -10,7 +10,9 @@ Humanities].
 
 ---
 
-Modified by [GhentCDH] for the [Dialectloket] project.
+Modified by [GhentCDH] for the [Dialectloket] project. 
+
+---
 
 ```bash
 $ npm install webvtt-player

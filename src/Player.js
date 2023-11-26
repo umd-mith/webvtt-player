@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Transcript from './Transcript'
 import Metadata from './Metadata'
-// import Search from './Search'
 import './Player.css'
 
 class Player extends React.Component {
@@ -26,6 +25,14 @@ class Player extends React.Component {
 
   componentDidMount() {
     this.checkIfLoaded()
+    // Skip to required timestamp if set
+    // Autoplay isn't supported in Chromium: https://goo.gl/xX8pDD
+    const queryParams = new URLSearchParams(window.location.search)
+    const timestamp = queryParams.get('ts')
+    const tsNumber = Number(timestamp)
+    if (!isNaN(tsNumber) && tsNumber > 0) {
+      this.audio.current.currentTime = tsNumber
+    }
   }
 
   render () {
@@ -42,6 +49,25 @@ class Player extends React.Component {
         seek={this.seek}
         track={metatrack} />
       : ""
+    const copyToClipboard = (stringToCopy) => {
+      navigator.clipboard.writeText(stringToCopy)
+          .then(() => {
+            return true
+          })
+          .catch(err => {
+            console.error('Failed to copy text: ', err)
+          })
+    }
+    // Copy a link to current timestamp to clipboard
+    const copyLink = (event) => {
+      const url = window.location.href
+      const player = event.target.closest('.player')
+      const audioPlayer = player.querySelector('audio')
+      const currentTime = audioPlayer.currentTime
+      const kloeke = event.currentTarget.parentNode.parentNode.parentNode.parentElement.dataset.kloeke
+      const copiedLink = url + '?kid=' + kloeke + '&ts=' + currentTime
+      copyToClipboard(copiedLink)
+    };
     return (
       <div className="webvtt-player">
         <div className="media">
@@ -63,6 +89,7 @@ class Player extends React.Component {
                 src={this.props.metadata}
                 ref={this.metatrack} />
             </audio>
+            <div className="icon-copy-link" onClick={copyLink} data-kloeke={this.kloeke}></div>
           </div>
           <div className="tracks">
             <Transcript 

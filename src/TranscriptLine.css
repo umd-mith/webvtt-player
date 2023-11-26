@@ -20,4 +20,5 @@
 
 .webvtt-player .text {
   margin-left: 110px;
+  transition: opacity 2.5s ease-in-out;
 }
